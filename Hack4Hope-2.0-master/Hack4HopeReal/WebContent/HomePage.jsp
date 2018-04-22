@@ -8,9 +8,25 @@
 <html>
 <head>
 <style>
+p{
+	color: black; 
+	
+	
+}
+body{
+
+background-color: purple; 
+
+
+
+}
+e{
+	color: Blue;
+
+}
 a{
-border:1px solid slategray;
-background-color: lightgray;
+border:1px solid steelgray;
+background-color: lightsteelblue;
 color: black;
 margin:75px;
 padding: 20px;
@@ -30,11 +46,14 @@ padding: 20px;
 <br>
 <br>
 <%//Created By Nick Stone %>
-<body background = "Gray.jpg">
-<d>
+<body>
+<p>
 please for the love of god work
-</d>
+</p>
+
 <p> Hello World</p>
+
+
 <%
  
 
@@ -56,10 +75,11 @@ please for the love of god work
 <br>
 <br>
 <br>
+<p>
 Just testing
 All this stufff out 
 you know how it goes
-
+</p>
 <br>
 <br>
 <br>
@@ -71,30 +91,70 @@ String viewing = "Viewcomments.jsp";
 
 
 %>
+<p>
+
 <% 
 	int max = easy.Queries.getNumPosts();
 
 	
 for(int i = 0; i < max;i++){
 
+	out.println("<br>");
 	out.println(plist.get(i).getcon());
+	out.println("<br>");
+	out.println("<br>");
+	out.println("<br>");
+	%>
+	<br>
+	
+	<br>
+	<%
+	out.println("<a href = Incrementpost.jsp?ID=" +plist.get(i).getID() +  " >Useful!</a>");	
+	
+	
+	
+	%>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br><%
+	out.println("<a href = deletePost.jsp?ID=" +plist.get(i).getID()  + " > Delete Post!</a>");
 	%>
 	
-	<button type="button" onclick=alert("hi<% easy.sortings.buttonclick("clicked");  %>") >Useful?</button>
- 	This should work. If S populates with a string we can call the DB 
- 	
- 	THis is on click 
-		
+	
+	
+	
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<%
+	
+	
+	out.println("<a href = DecrementPost.jsp?ID=" +plist.get(i).getID() + " >Not Useful</a>");	
+ %>
 	<% 
+	out.println("<Strong>"  + plist.get(i).getuse() + "</Strong>");
+	out.println("<br>");
+	out.println("<br>");
 	
+	out.println("<Strong>"  + plist.get(i).getuser() + "</Strong>");
 	
+	out.println("<br>");
+	out.println("<br>");
+	out.println("<br>");
 	out.println("<Strong>" +  plist.get(i).getID() + "</Strong>");
-	out.println("<a href= Commenting.jsp >Comment on this post </a>");
-	out.println("<a href= Viewcomments.jsp >View all comments </a>");
+	out.println("<a href= Commenting.jsp?ID=" +plist.get(i).getID() + " >Comment on this post </a>");
 	out.println("<br>");
 	out.println("<br>");
 	out.println("<br>");
-	
+	out.println("<a href= Viewcomments.jsp?ID=" +plist.get(i).getID() + " >View all comments </a>");
+	out.println("<br>");
+	out.println("<br>");
+	out.println("<br>");
 	
 	
 	}
@@ -102,10 +162,11 @@ for(int i = 0; i < max;i++){
 	
 	
 %>
+</p>
 <br>
 <br>
 <br>
-<%out.println(easy.sortings.getg()); %>
+<%//out.println(easy.sortings.getg()); %>
 
 </body>
 </html>
